@@ -1,0 +1,602 @@
+[
+  {
+    "question": "What was the number of 17 interceptions that Peyton Manning had by end of the year?",
+    "gold_chunk_id": "chunk_13"
+  },
+  {
+    "question": "What is the minimum required if you want to teach in Canada?",
+    "gold_chunk_id": "chunk_328"
+  },
+  {
+    "question": "Germany referred to which area more so than an actual country?",
+    "gold_chunk_id": "chunk_1912"
+  },
+  {
+    "question": "When did the European Anti-Fraud Office investigate John Dalli?",
+    "gold_chunk_id": "chunk_751"
+  },
+  {
+    "question": "Who lectured at the Newcastle library on the 20th of October in 1880?",
+    "gold_chunk_id": "chunk_963"
+  },
+  {
+    "question": "When a plant is injured, what can become proplastids?",
+    "gold_chunk_id": "chunk_1728"
+  },
+  {
+    "question": "What was the only region in Europe not conquered by the Germanic tribes?",
+    "gold_chunk_id": "chunk_1912"
+  },
+  {
+    "question": "What was the total number of homes Sky announced that had Sky+HD in March of 2012?",
+    "gold_chunk_id": "chunk_495"
+  },
+  {
+    "question": "What is located within this district?",
+    "gold_chunk_id": "chunk_542"
+  },
+  {
+    "question": "In the most basic sense what did a Turing machine emulate?",
+    "gold_chunk_id": "chunk_283"
+  },
+  {
+    "question": "Who did the Parliament rent additional buildings from?",
+    "gold_chunk_id": "chunk_1815"
+  },
+  {
+    "question": "Who was Westinghouse's chief rival?",
+    "gold_chunk_id": "chunk_171"
+  },
+  {
+    "question": "Who was yersinia pestis named for?",
+    "gold_chunk_id": "chunk_895"
+  },
+  {
+    "question": "Who is the city supervisor of San Francisco?",
+    "gold_chunk_id": "chunk_26"
+  },
+  {
+    "question": "Of what hollywood film company was UPT a subsidiary of when it merged with ABC?",
+    "gold_chunk_id": "chunk_1086"
+  },
+  {
+    "question": "What did Johannes Agricola preach that God's gospel revealed?",
+    "gold_chunk_id": "chunk_421"
+  },
+  {
+    "question": "What did the radical reformers cause in the new order?",
+    "gold_chunk_id": "chunk_383"
+  },
+  {
+    "question": "What entity was rumored to be sold by ABC in between May and September 2005?",
+    "gold_chunk_id": "chunk_1076"
+  },
+  {
+    "question": "Which group of ctenophore are are hardest to study?",
+    "gold_chunk_id": "chunk_814"
+  },
+  {
+    "question": "Why is breathing oxygen in space craft not dangerous to health?",
+    "gold_chunk_id": "chunk_661"
+  },
+  {
+    "question": "What other health issues did Luther have?",
+    "gold_chunk_id": "chunk_435"
+  },
+  {
+    "question": "Who did Luther think was behind the antinomian theses circulating in Wittenberg?",
+    "gold_chunk_id": "chunk_421"
+  },
+  {
+    "question": "What was the passer rating for Peyton Manning that he finished out with for the season? ",
+    "gold_chunk_id": "chunk_13"
+  },
+  {
+    "question": "What are apicoplasts missing?",
+    "gold_chunk_id": "chunk_1683"
+  },
+  {
+    "question": "How did Luther broaden the Reformation in terms of prophecy?",
+    "gold_chunk_id": "chunk_379"
+  },
+  {
+    "question": "What resource was mined in the Newcastle area?",
+    "gold_chunk_id": "chunk_937"
+  },
+  {
+    "question": "Did the European Court of Justice rule the defendant in the case of Commission v. Edith Cresson broke any laws?",
+    "gold_chunk_id": "chunk_751"
+  },
+  {
+    "question": "Along with nuclear, geothermal and internal combustion engine waste heat, what sort of energy might supply the heat for a steam engine?",
+    "gold_chunk_id": "chunk_585"
+  },
+  {
+    "question": "Who was the announcer for Westwood One's Super Bowl 50 coverage?",
+    "gold_chunk_id": "chunk_39"
+  },
+  {
+    "question": "What type of heating element is often used in toy steam engines?",
+    "gold_chunk_id": "chunk_585"
+  },
+  {
+    "question": "What does the bathocyroe and ocyropsis do to escape danger?",
+    "gold_chunk_id": "chunk_823"
+  },
+  {
+    "question": "What is to blame for the burdens in health care in Kenya?",
+    "gold_chunk_id": "chunk_1634"
+  },
+  {
+    "question": "Who has criticized ordering from online pharmacies that don't require prescriptions?",
+    "gold_chunk_id": "chunk_1215"
+  },
+  {
+    "question": "What globally popular half marathon began in 1981?",
+    "gold_chunk_id": "chunk_937"
+  },
+  {
+    "question": "What is the name of the process which confirms the primality of a number n?",
+    "gold_chunk_id": "chunk_1734"
+  },
+  {
+    "question": "How was the civil disobedience shown in Antigone?",
+    "gold_chunk_id": "chunk_1276"
+  },
+  {
+    "question": "Who found that a culture had developed where few Commissioners had any sense of responsibility?",
+    "gold_chunk_id": "chunk_751"
+  },
+  {
+    "question": "How many touchdowns did Ronnie Hillman make?",
+    "gold_chunk_id": "chunk_13"
+  },
+  {
+    "question": "Who called their system the \"Tesla Polyphase System\"?",
+    "gold_chunk_id": "chunk_180"
+  },
+  {
+    "question": "From whom did the Huguenots in South Carolina purchase land from?",
+    "gold_chunk_id": "chunk_536"
+  },
+  {
+    "question": "What might also be required of a teacher to pass, in addition to certification?",
+    "gold_chunk_id": "chunk_326"
+  },
+  {
+    "question": "What does increasing inequality harm?",
+    "gold_chunk_id": "chunk_1429"
+  },
+  {
+    "question": "What city north of New York was settled by Huguenots?",
+    "gold_chunk_id": "chunk_542"
+  },
+  {
+    "question": "Who is the mayor of San Francisco?",
+    "gold_chunk_id": "chunk_26"
+  },
+  {
+    "question": "When did the rivalry between Westinghouse and Edison reach its peak?",
+    "gold_chunk_id": "chunk_171"
+  },
+  {
+    "question": "What was the last Doctor Who episode that Dudley Simpson wrote music for?",
+    "gold_chunk_id": "chunk_1481"
+  },
+  {
+    "question": "Which part of the museum received the first major post-war work?",
+    "gold_chunk_id": "chunk_1003"
+  },
+  {
+    "question": "Where did water to the west of the Amazon drainage basin flow towards?",
+    "gold_chunk_id": "chunk_787"
+  },
+  {
+    "question": "When did the Syrian Civil War begin?",
+    "gold_chunk_id": "chunk_1881"
+  },
+  {
+    "question": "What is one of the reason that underdeveloped nations received aid from the oil income?",
+    "gold_chunk_id": "chunk_669"
+  },
+  {
+    "question": "What was intended for the site of the former boiler house?",
+    "gold_chunk_id": "chunk_1003"
+  },
+  {
+    "question": "When did the Eleventh Doctor appear in the Sarah Jane series?",
+    "gold_chunk_id": "chunk_1494"
+  },
+  {
+    "question": "Why is majority rule used?",
+    "gold_chunk_id": "chunk_1222"
+  },
+  {
+    "question": "How did scientists assess the DNA/RNA of yersinia pestis? ",
+    "gold_chunk_id": "chunk_898"
+  },
+  {
+    "question": "What does less education lead to when working?",
+    "gold_chunk_id": "chunk_1408"
+  },
+  {
+    "question": "How did Luther respond after being asked if the books were his?",
+    "gold_chunk_id": "chunk_372"
+  },
+  {
+    "question": "How many students were enrolled in public schools in Victoria?",
+    "gold_chunk_id": "chunk_522"
+  },
+  {
+    "question": "Who said the homeless in the area would have to leave?",
+    "gold_chunk_id": "chunk_26"
+  },
+  {
+    "question": "What did Olivier Roy state underwent a remarkable shift in the second half of the 20th century?",
+    "gold_chunk_id": "chunk_1849"
+  },
+  {
+    "question": "Which Denver linebacker was named Super Bowl MVP?",
+    "gold_chunk_id": "chunk_2"
+  },
+  {
+    "question": "What are the two major subsystems of the immune system?",
+    "gold_chunk_id": "chunk_1226"
+  },
+  {
+    "question": "People behaving with civil disobedience that is not-violent is said to make society have more of what?",
+    "gold_chunk_id": "chunk_1284"
+  },
+  {
+    "question": "What type of ideals generalize prime elements?",
+    "gold_chunk_id": "chunk_1760"
+  },
+  {
+    "question": "What gained ground when Arab nationalism suffered?",
+    "gold_chunk_id": "chunk_1863"
+  },
+  {
+    "question": "What is that power that enables us to love?",
+    "gold_chunk_id": "chunk_1937"
+  },
+  {
+    "question": "Trotsky thought what was needed for a true Russian revolution.",
+    "gold_chunk_id": "chunk_1917"
+  },
+  {
+    "question": "What are FtsZ1 and FtsZ2?",
+    "gold_chunk_id": "chunk_1729"
+  },
+  {
+    "question": "What did Schurf's letter say  Luther's return caused?",
+    "gold_chunk_id": "chunk_382"
+  },
+  {
+    "question": "State Route 180 comes from which direction via Mendota?",
+    "gold_chunk_id": "chunk_862"
+  },
+  {
+    "question": "Who designed the plaster work in the Art Library?",
+    "gold_chunk_id": "chunk_1000"
+  },
+  {
+    "question": "Who were the Westwood one color analysts?",
+    "gold_chunk_id": "chunk_39"
+  },
+  {
+    "question": "What is the systemic acquired resistance response of a plant immune system?",
+    "gold_chunk_id": "chunk_1717"
+  },
+  {
+    "question": "When was the Santer Commission censured by Parliament?",
+    "gold_chunk_id": "chunk_751"
+  },
+  {
+    "question": "Where did Korea border Kublai's territory?",
+    "gold_chunk_id": "chunk_1552"
+  },
+  {
+    "question": "How many major immune responses do plants have?",
+    "gold_chunk_id": "chunk_1717"
+  },
+  {
+    "question": "What ground based group did Tesla think the weapon could be used on?",
+    "gold_chunk_id": "chunk_208"
+  },
+  {
+    "question": "Until 1987, what stance did the Muslim Brotherhood in Palestine take towards Israel?",
+    "gold_chunk_id": "chunk_1872"
+  },
+  {
+    "question": "What measurement do scientists used to determine the quality of water?",
+    "gold_chunk_id": "chunk_647"
+  },
+  {
+    "question": "With what body must a pharmacy technician register?",
+    "gold_chunk_id": "chunk_1202"
+  },
+  {
+    "question": "When did oil start getting priced in the terms of gold?",
+    "gold_chunk_id": "chunk_665"
+  },
+  {
+    "question": "What happens to reactive oxygen species signals since they don't leave the chloroplast?",
+    "gold_chunk_id": "chunk_1718"
+  },
+  {
+    "question": "Where is this housing style being developed recently?",
+    "gold_chunk_id": "chunk_953"
+  },
+  {
+    "question": "Which lunar probe was near the Apollo 12 crew's landing site?",
+    "gold_chunk_id": "chunk_731"
+  },
+  {
+    "question": "Who did the North declare for during the English civil war?",
+    "gold_chunk_id": "chunk_942"
+  },
+  {
+    "question": "What did frozen subsoil and expanded alpine glaciers begin to do?",
+    "gold_chunk_id": "chunk_1794"
+  },
+  {
+    "question": "What device is used to test the magnetic attractions involved in liquid oxygen?",
+    "gold_chunk_id": "chunk_644"
+  },
+  {
+    "question": "What type of plea is sometimes taken as an act of disobedience?",
+    "gold_chunk_id": "chunk_1295"
+  },
+  {
+    "question": "In what time frame did Tesla weigh almost exactly the same amount?",
+    "gold_chunk_id": "chunk_221"
+  },
+  {
+    "question": "What did Luther call the mass instead of sacrifice?",
+    "gold_chunk_id": "chunk_378"
+  },
+  {
+    "question": "What's the nickname for Newcastle's A167?",
+    "gold_chunk_id": "chunk_977"
+  },
+  {
+    "question": "How do chloroplasts trigger the plant's immune system?",
+    "gold_chunk_id": "chunk_1717"
+  },
+  {
+    "question": "Which direction did the disease first move in?",
+    "gold_chunk_id": "chunk_891"
+  },
+  {
+    "question": "What theorem defines the main role of primes in number theory?",
+    "gold_chunk_id": "chunk_1733"
+  },
+  {
+    "question": "What was Frensh military presence at start of war?",
+    "gold_chunk_id": "chunk_1988"
+  },
+  {
+    "question": "What are teachers expected to give their students?",
+    "gold_chunk_id": "chunk_308"
+  },
+  {
+    "question": "In the fall quarter of 2014, how many students signed up for the university's professional schools?",
+    "gold_chunk_id": "chunk_1529"
+  },
+  {
+    "question": "What is the name of the river that is completely contained inside Jacksonville?",
+    "gold_chunk_id": "chunk_1393"
+  },
+  {
+    "question": "What device is used to treat various conditions such as carbon monoxide poisoning?",
+    "gold_chunk_id": "chunk_653"
+  },
+  {
+    "question": "The largest brand of what store in the UK is located in Kingston Park?",
+    "gold_chunk_id": "chunk_952"
+  },
+  {
+    "question": "What year did the the case go before the supreme court?",
+    "gold_chunk_id": "chunk_1288"
+  },
+  {
+    "question": "Who was the Super Bowl 50 MVP?",
+    "gold_chunk_id": "chunk_2"
+  },
+  {
+    "question": "What is the mineral wustite?",
+    "gold_chunk_id": "chunk_655"
+  },
+  {
+    "question": "What did Lavoisier conclude was consumed by combustion in his experiments?",
+    "gold_chunk_id": "chunk_633"
+  },
+  {
+    "question": "What caused Luther to write hymns?",
+    "gold_chunk_id": "chunk_403"
+  },
+  {
+    "question": "Who designed the wrought iron gates that was used to embellish the east side of the building?",
+    "gold_chunk_id": "chunk_1000"
+  },
+  {
+    "question": "What helps to unleash the productivity ability of the poor?",
+    "gold_chunk_id": "chunk_1408"
+  },
+  {
+    "question": "Why did the series end in 2011?",
+    "gold_chunk_id": "chunk_1494"
+  },
+  {
+    "question": "What danger did the IPCC understate?",
+    "gold_chunk_id": "chunk_1664"
+  },
+  {
+    "question": "Who did Mueller recruit to be a manager for NASA projects on a loaned situation?",
+    "gold_chunk_id": "chunk_700"
+  },
+  {
+    "question": "Who originally hosted the syndicated version of Who Wants to Be a Millionaire?",
+    "gold_chunk_id": "chunk_1081"
+  },
+  {
+    "question": "The papers of which famous English Victorian author are collected in the library?",
+    "gold_chunk_id": "chunk_1015"
+  },
+  {
+    "question": "The papers of which famous English writer of children's books such as The Tale of Peter Rabbit are collected in the museum?",
+    "gold_chunk_id": "chunk_1015"
+  },
+  {
+    "question": "What was the containment failure rate in a tobacco plant study using plastid transformation?",
+    "gold_chunk_id": "chunk_1732"
+  },
+  {
+    "question": "How many hymns did Luther contribute to the Erfurt Enchiridion?",
+    "gold_chunk_id": "chunk_409"
+  },
+  {
+    "question": "What do most online pharmacies do?",
+    "gold_chunk_id": "chunk_1215"
+  },
+  {
+    "question": "In what series did ABC present it's 1950s film adaptations in?",
+    "gold_chunk_id": "chunk_1087"
+  },
+  {
+    "question": "By when did the Germanic tribes conquer the Celtic peoples?",
+    "gold_chunk_id": "chunk_1912"
+  },
+  {
+    "question": "What's the biggest difference in the teaching relationship for primary and secondary school?",
+    "gold_chunk_id": "chunk_300"
+  },
+  {
+    "question": "What kind of diseases do drugs target apicoplasts for?",
+    "gold_chunk_id": "chunk_1683"
+  },
+  {
+    "question": "What is Warsaw known as in Polish?",
+    "gold_chunk_id": "chunk_102"
+  },
+  {
+    "question": "To ensure safety of future space missions Oxygen was used at _____ of the normal pressure.",
+    "gold_chunk_id": "chunk_626"
+  },
+  {
+    "question": "What is the subsystem that protects the human brain?",
+    "gold_chunk_id": "chunk_1226"
+  },
+  {
+    "question": "What is the hypersensitive response of a plant immune system?",
+    "gold_chunk_id": "chunk_1717"
+  },
+  {
+    "question": "What form of poetry was developed in the Yuan?",
+    "gold_chunk_id": "chunk_1576"
+  },
+  {
+    "question": "What ethnicity was Shi Tianze?",
+    "gold_chunk_id": "chunk_1550"
+  },
+  {
+    "question": "Which two importers claimed that under a French competition law, they were prevented from selling Picon beer under wholesale price?",
+    "gold_chunk_id": "chunk_777"
+  },
+  {
+    "question": "What year did Roger de Tosny fail to accomplish what he set out to do?",
+    "gold_chunk_id": "chunk_130"
+  },
+  {
+    "question": "How did Natives in Logstown take Celeron's information?",
+    "gold_chunk_id": "chunk_1990"
+  },
+  {
+    "question": "What is the smallest geographical region discussed?",
+    "gold_chunk_id": "chunk_449"
+  },
+  {
+    "question": "What is necessary for chloroplasts to replicate?",
+    "gold_chunk_id": "chunk_1731"
+  },
+  {
+    "question": "From 1947 to 1967, how much did the price of oil increase?",
+    "gold_chunk_id": "chunk_666"
+  },
+  {
+    "question": "What sacrament accords Christians renewed life?",
+    "gold_chunk_id": "chunk_424"
+  },
+  {
+    "question": "Who did Luther banish?",
+    "gold_chunk_id": "chunk_383"
+  },
+  {
+    "question": "The complexity of problems often depends on what?",
+    "gold_chunk_id": "chunk_271"
+  },
+  {
+    "question": "How much money has been raised by the host committee?",
+    "gold_chunk_id": "chunk_29"
+  },
+  {
+    "question": "What kind of company is Sky UK Limited?",
+    "gold_chunk_id": "chunk_491"
+  },
+  {
+    "question": "What kind of audience share did MNF allow ABC to attain according to Goldenson?",
+    "gold_chunk_id": "chunk_1092"
+  },
+  {
+    "question": "How long did the 5th president's tenure last?",
+    "gold_chunk_id": "chunk_1513"
+  },
+  {
+    "question": "How many yards did Brad Nortman's punt travel?",
+    "gold_chunk_id": "chunk_47"
+  },
+  {
+    "question": "From which country did the Rococo Augustus Rex Bureau Cabinet come from?",
+    "gold_chunk_id": "chunk_1029"
+  },
+  {
+    "question": "Where is the Tyneside Bar located?",
+    "gold_chunk_id": "chunk_968"
+  },
+  {
+    "question": "What academy did Tugh Temur found?",
+    "gold_chunk_id": "chunk_1563"
+  },
+  {
+    "question": "What is key to getting the skills needed for high demand jobs?",
+    "gold_chunk_id": "chunk_1408"
+  },
+  {
+    "question": "What is the prophecy in Daniel that interested Luther?",
+    "gold_chunk_id": "chunk_379"
+  },
+  {
+    "question": "Secular Arab nationalism was blamed for both the defeat of Arab troops as well as what type of stagnation?",
+    "gold_chunk_id": "chunk_1863"
+  },
+  {
+    "question": "When did Europe slowly begin to warm up from the last Ice Age?",
+    "gold_chunk_id": "chunk_1794"
+  },
+  {
+    "question": "When did the Plos Pathogens paper come out?",
+    "gold_chunk_id": "chunk_898"
+  },
+  {
+    "question": "Who hosted the bandstand show debuted on ABC in 1957?",
+    "gold_chunk_id": "chunk_1140"
+  },
+  {
+    "question": "Other than Downtown San Bernardino, and University Town, what is the name of another business district in the San Bernardino-Riverside area?",
+    "gold_chunk_id": "chunk_472"
+  },
+  {
+    "question": "What would create a conflict between a problem X and problem C within the context of reduction? ",
+    "gold_chunk_id": "chunk_271"
+  }
+]

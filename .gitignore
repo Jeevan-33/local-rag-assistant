@@ -1,0 +1,21 @@
+# Virtual environment
+venv/
+*.pyc
+__pycache__/
+
+# Indexed data — contains extracted text from YOUR personal files, don't commit
+app/data/corpus.json
+app/data/memory.db
+app/data/manifest.json
+
+# Benchmark data is fine to keep (it's just SQuAD, public) — but exclude if large
+# benchmark/data/corpus.json
+# benchmark/data/queries.json
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

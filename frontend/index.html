@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Local RAG Assistant</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: system-ui, sans-serif; background: #1e1e1e; color: #eee; margin: 0; display: flex; height: 100vh; }
+
+  #sidebar { width: 260px; background: #171717; border-right: 1px solid #2d2d2d; display: flex; flex-direction: column; flex-shrink: 0; }
+  #sidebar .new-chat-btn { margin: 12px; padding: 10px; background: #2d2d2d; border: 1px solid #444; color: #eee; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14px; }
+  #sidebar .new-chat-btn:hover { background: #383838; }
+  #conv-list { flex: 1; overflow-y: auto; padding: 0 8px; }
+  .conv-item { display: flex; justify-content: space-between; align-items: center; padding: 9px 10px; border-radius: 6px; cursor: pointer; font-size: 13px; color: #bbb; margin-bottom: 2px; }
+  .conv-item:hover { background: #242424; }
+  .conv-item.active { background: #2d2d2d; color: #fff; }
+  .conv-item .del-btn { opacity: 0; color: #888; font-size: 12px; padding: 2px 6px; }
+  .conv-item:hover .del-btn { opacity: 1; }
+  .conv-item .del-btn:hover { color: #e57373; }
+  .conv-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  #main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  header { padding: 14px 24px; background: #1e1e1e; border-bottom: 1px solid #2d2d2d; }
+  header h1 { margin: 0; font-size: 16px; font-weight: 600; }
+
+  .index-bar { display: flex; gap: 8px; padding: 10px 24px; background: #1e1e1e; border-bottom: 1px solid #2d2d2d; }
+  .index-bar input { flex: 1; padding: 8px 10px; background: #2a2a2a; border: 1px solid #444; color: #eee; border-radius: 6px; font-size: 13px; }
+  .index-bar button { padding: 8px 16px; background: #4C72B0; border: none; color: white; border-radius: 6px; cursor: pointer; font-size: 13px; }
+  .index-bar button:disabled { background: #3a3a3a; cursor: not-allowed; }
+  #status { font-size: 12px; color: #999; padding: 4px 24px 10px; }
+  #status.error { color: #e57373; }
+  #status.ok { color: #81c784; }
+
+  #messages { flex: 1; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 20px; }
+
+  .msg.user {
+    align-self: flex-end;
+    max-width: 65%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #4C72B0;
+    font-size: 14px;
+    line-height: 1.45;
+    white-space: pre-wrap;
+  }
+
+  .msg.assistant {
+    align-self: stretch;
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #e4e4e4;
+  }
+  .msg.assistant p { margin: 0 0 12px 0; white-space: pre-wrap; }
+  .msg.assistant p:last-child { margin-bottom: 0; }
+
+  .msg.error {
+    align-self: flex-start;
+    max-width: 70%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #4a2626;
+    color: #ffb3b3;
+    font-size: 14px;
+  }
+
+  .code-block {
+    background: #171717;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 12px 0;
+    overflow-x: auto;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 13px;
+    color: #c5e1a5;
+    white-space: pre;
+  }
+
+  .sources { font-size: 11px; color: #999; margin-top: 10px; }
+  .empty-state { margin: auto; text-align: center; color: #666; font-size: 14px; }
+
+  .chat-input { display: flex; gap: 8px; padding: 16px 24px; background: #1e1e1e; border-top: 1px solid #2d2d2d; }
+  .chat-input input { flex: 1; padding: 11px 14px; background: #2a2a2a; border: 1px solid #444; color: #eee; border-radius: 8px; font-size: 14px; }
+  .chat-input button { padding: 10px 18px; background: #4C72B0; border: none; color: white; border-radius: 8px; cursor: pointer; }
+  .chat-input button:disabled { background: #3a3a3a; cursor: not-allowed; }
+
+  .typing-dots::after { content: '...'; animation: dots 1.2s steps(4, end) infinite; }
+  @keyframes dots { 0%,20%{content:'.'} 40%{content:'..'} 60%,100%{content:'...'} }
+</style>
+</head>
+<body>
+
+<div id="sidebar">
+  <button class="new-chat-btn" onclick="newChat()">+ New chat</button>
+  <div id="conv-list"></div>
+</div>
+
+<div id="main">
+  <header><h1>Local RAG Assistant</h1></header>
+
+  <div class="index-bar">
+    <input id="pathInput" placeholder="Folder or file path to index (e.g. C:\Users\you\Documents\notes)" />
+    <button id="indexBtn" onclick="indexPath()">Index</button>
+  </div>
+  <div id="status">Not indexed yet.</div>
+
+  <div id="messages"><div class="empty-state">Index a file or folder above, then start chatting.</div></div>
+
+  <div class="chat-input">
+    <input id="questionInput" placeholder="Ask a question..." onkeydown="if(event.key==='Enter') sendQuestion()" />
+    <button id="sendBtn" onclick="sendQuestion()">Send</button>
+  </div>
+</div>
+
+<script>
+const API_BASE = "http://127.0.0.1:8000";
+let currentConvId = null;
+
+// ---------- Index bar ----------
+
+function setStatus(text, kind) {
+  const el = document.getElementById("status");
+  el.textContent = text;
+  el.className = kind || "";
+}
+
+async function refreshStatus() {
+  try {
+    const res = await fetch(`${API_BASE}/status`);
+    const data = await res.json();
+    setStatus(data.indexed ? `Indexed: ${data.chunk_count} chunks ready` : "Not indexed yet.", data.indexed ? "ok" : "");
+  } catch (e) {
+    setStatus("Could not reach backend. Is the server running on port 8000?", "error");
+  }
+}
+
+async function indexPath() {
+  const pathInput = document.getElementById("pathInput");
+  const path = pathInput.value.trim();
+  if (!path) return;
+  const btn = document.getElementById("indexBtn");
+  btn.disabled = true;
+  setStatus("Indexing...");
+  try {
+    const res = await fetch(`${API_BASE}/index`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ path })
+    });
+    const data = await res.json();
+    if (data.success) setStatus(`Indexed: ${data.chunk_count} chunks ready`, "ok");
+    else setStatus(`Indexing failed: ${data.error}`, "error");
+  } catch (e) {
+    setStatus(`Could not reach backend: ${e.message}`, "error");
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+// ---------- Conversations (sidebar) ----------
+
+async function loadConversations() {
+  const res = await fetch(`${API_BASE}/conversations`);
+  const data = await res.json();
+  const list = document.getElementById("conv-list");
+  list.innerHTML = "";
+  data.conversations.forEach(c => {
+    const item = document.createElement("div");
+    item.className = "conv-item" + (c.id === currentConvId ? " active" : "");
+    item.onclick = () => openConversation(c.id);
+
+    const title = document.createElement("div");
+    title.className = "conv-title";
+    title.textContent = c.title;
+
+    const del = document.createElement("span");
+    del.className = "del-btn";
+    del.textContent = "✕";
+    del.onclick = (e) => { e.stopPropagation(); deleteConversation(c.id); };
+
+    item.appendChild(title);
+    item.appendChild(del);
+    list.appendChild(item);
+  });
+
+  if (!currentConvId && data.conversations.length > 0) openConversation(data.conversations[0].id);
+  else if (data.conversations.length === 0) newChat();
+}
+
+async function newChat() {
+  const res = await fetch(`${API_BASE}/conversations`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ title: "New chat" })
+  });
+  const data = await res.json();
+  currentConvId = data.id;
+  document.getElementById("messages").innerHTML = '<div class="empty-state">Ask anything about your indexed files.</div>';
+  await loadConversations();
+}
+
+async function deleteConversation(id) {
+  await fetch(`${API_BASE}/conversations/${id}`, { method: "DELETE" });
+  if (id === currentConvId) currentConvId = null;
+  await loadConversations();
+}
+
+async function openConversation(id) {
+  currentConvId = id;
+  const res = await fetch(`${API_BASE}/conversations/${id}/messages`);
+  const data = await res.json();
+  const container = document.getElementById("messages");
+  container.innerHTML = "";
+  if (data.messages.length === 0) {
+    container.innerHTML = '<div class="empty-state">Ask anything about your indexed files.</div>';
+  } else {
+    data.messages.forEach(m => addMessage(m.role, m.content, m.sources || []));
+  }
+  await loadConversations();
+}
+
+// ---------- Message rendering ----------
+
+function renderAssistantContent(container, text) {
+  // Split on ```code blocks```, keep everything else as plain paragraphs.
+  const parts = text.split(/```([\s\S]*?)```/g);
+  // parts alternates: [plainText, codeText, plainText, codeText, ...]
+  parts.forEach((part, i) => {
+    const isCode = i % 2 === 1;
+    if (isCode) {
+      const pre = document.createElement("div");
+      pre.className = "code-block";
+      const cleaned = part.replace(/^[a-zA-Z0-9+-]*\n/, ""); // strip optional language tag
+      pre.textContent = cleaned.trim();
+      container.appendChild(pre);
+    } else if (part.trim()) {
+      part.split(/\n\s*\n/).forEach(paragraph => {
+        if (!paragraph.trim()) return;
+        const p = document.createElement("p");
+        p.textContent = paragraph.trim();
+        container.appendChild(p);
+      });
+    }
+  });
+}
+
+function addMessage(role, content, sources = []) {
+  const container = document.getElementById("messages");
+  const emptyState = container.querySelector(".empty-state");
+  if (emptyState) emptyState.remove();
+
+  const div = document.createElement("div");
+  div.className = `msg ${role}`;
+
+  if (role === "assistant") {
+    renderAssistantContent(div, content);
+  } else {
+    div.textContent = content;
+  }
+
+  if (sources.length > 0) {
+    const src = document.createElement("div");
+    src.className = "sources";
+    src.textContent = "Source: " + sources.join(", ");
+    div.appendChild(src);
+  }
+
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+  return div;
+}
+
+// ---------- Sending a question ----------
+
+async function sendQuestion() {
+  if (!currentConvId) await newChat();
+  const input = document.getElementById("questionInput");
+  const question = input.value.trim();
+  if (!question) return;
+
+  const sendBtn = document.getElementById("sendBtn");
+  sendBtn.disabled = true;
+  addMessage("user", question);
+  input.value = "";
+
+  const thinkingDiv = document.createElement("div");
+  thinkingDiv.className = "msg assistant";
+  thinkingDiv.innerHTML = '<span class="typing-dots">Thinking</span>';
+  document.getElementById("messages").appendChild(thinkingDiv);
+  document.getElementById("messages").scrollTop = document.getElementById("messages").scrollHeight;
+
+  try {
+    const res = await fetch(`${API_BASE}/chat`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question, conversation_id: currentConvId })
+    });
+    const data = await res.json();
+    thinkingDiv.remove();
+
+    if (data.success === false) addMessage("error", `Error: ${data.error}`);
+    else addMessage("assistant", data.answer, data.sources || []);
+
+    await loadConversations();
+  } catch (e) {
+    thinkingDiv.remove();
+    addMessage("error", `Could not reach backend: ${e.message}`);
+  } finally {
+    sendBtn.disabled = false;
+  }
+}
+
+// ---------- Init ----------
+
+refreshStatus();
+loadConversations();
+</script>
+
+</body>
+</html>
